@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"
-  #     - name : checkout source code 
-  #     - uses: actions/checkout@v2.4.0
+      - name: checkout source code 
+      - uses: actions/checkout@v6.0.1
+      - run: echo " this repo is ${{ github.repository}} "
+    
+      
   # another_job: 
