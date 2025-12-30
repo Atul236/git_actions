@@ -5,7 +5,7 @@ jobs:
     name: test seleniem job 
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"
   #     - name : checkout source code 
   #     - uses: actions/checkout@v2.4.0
   # another_job: 
