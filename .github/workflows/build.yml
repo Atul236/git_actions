@@ -2,7 +2,7 @@ name: Build Package
 on: [push, pull_request]
 jobs:
   test_git_actions1:
-    name: test seleniem job 
+    name: test seleniem job1
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"
@@ -14,4 +14,9 @@ jobs:
         shell: bash
     
       
-  # another_job: 
+  test_git_actions1:
+    name: test seleniem job2
+    runs-on: ubuntu-latest
+    needs: test_git_actions1           # to add dependency on first job 
+    steps:
+    - run: echo "this is second job "
