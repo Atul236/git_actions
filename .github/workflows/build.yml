@@ -17,6 +17,9 @@ jobs:
   test_git_actions2:
     name: test seleniem job2
     runs-on: ubuntu-latest
-    needs: test_git_actions1           # to add dependency on first job 
+    needs: test_git_actions1          # to add dependency on first job 
     steps:
     - run: echo "this is second job "
+  # without dependency both will run sequencially ,, if parent job fails it wont execute if we want some jobs to always 
+  # run even if above jobs get fails we can use always command 
+
