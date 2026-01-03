@@ -4,6 +4,8 @@ jobs:
   test_git_actions1:
     name: test seleniem job1
     runs-on: ubuntu-latest
+    env:
+      SELENIUM_DRIVER: 'remote driver'
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"
       - name: checkout source code 
@@ -12,6 +14,9 @@ jobs:
       - name: run a script file from repo  file 
         run : sh ./run.sh
         shell: bash
+      - name: selenium test
+        if: ${{env.SELENIUM_DRIVER == 'remote driver'}}
+        run: echo "running test in remote selenium driver "
     
       
   test_git_actions2:
