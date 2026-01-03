@@ -7,7 +7,7 @@ jobs:
     env:
       SELENIUM_DRIVER: 'remote driver'
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on ${{runner.os}}"   #  the thing which we have used like event.name or runner .os these are called context 
       - name: checkout source code 
         uses: actions/checkout@v6.0.1
       - run: echo " this repo is ${{ github.repository}} "
@@ -15,7 +15,7 @@ jobs:
         run : sh ./run.sh
         shell: bash
       - name: selenium test
-        if: ${{env.SELENIUM_DRIVER == 'remote driver'}}
+        if: ${{env.SELENIUM_DRIVER == 'remote driver'}}         # instead expression if we write always it will run always even if avove test gets failed, so if we want some thing to run always then we will use always as expression
         run: echo "running test in remote selenium driver "
     
       
